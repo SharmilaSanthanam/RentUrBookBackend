@@ -13,7 +13,7 @@ const io = new Server(server, {
     // methods: '*'
     methods: ['GET', 'POST', 'PATCH', "DELETE"]
   })
-  const path = require("path");
+//   const path = require("path");
   
 const userModel = require('./models/userModel');
 const userRoutes = require('./routes/userRoutes');
@@ -21,9 +21,9 @@ const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 
-app.get("/", (req, res) =>
-  res.send(`Server Running`)
-);
+// app.get("/", (req, res) =>
+//   res.send(`Server Running`)
+// );
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
