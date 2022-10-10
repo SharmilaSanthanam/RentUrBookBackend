@@ -21,9 +21,9 @@ const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 
-// app.get("/", (req, res) =>
-//   res.send(`Server Running`)
-// );
+app.get("/", (req, res) =>
+  res.send(`Server Running`)
+);
 
 const PORT = process.env.PORT || 5001;
 app.use(cors());
