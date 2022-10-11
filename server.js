@@ -13,7 +13,7 @@ const io = new Server(server, {
     // methods: '*'
     methods: ['GET', 'POST', 'PATCH', "DELETE"]
   })
-  const path = require("path");
+  // const path = require("path");
   
 const userModel = require('./models/userModel');
 const userRoutes = require('./routes/userRoutes');
@@ -25,6 +25,8 @@ const imageRoutes = require('./routes/imageRoutes');
 app.get("/", (req, res) =>
   res.send(`Server Running`)
 );
+
+const PORT = process.env.PORT || 5001;
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -49,10 +51,10 @@ app.post('/create-payment', async(req, res)=> {
    }
 })
 
-const PORT = process.env.PORT || 8080
 
-server.listen(8080, ()=> {
-    console.log('server running at port', 8080)
+
+server.listen(PORT, ()=>{
+  console.log('listening to', PORT)
   })
 
   app.set('socketio', io);
