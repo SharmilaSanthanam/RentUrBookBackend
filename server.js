@@ -25,10 +25,6 @@ app.get("/", (req, res) =>
   res.send(`Server Running`)
 );
 
-app.get("/", (req, res) =>
-  res.send(`Server Running`)
-);
-
 const PORT = process.env.PORT || 5001;
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
@@ -53,8 +49,6 @@ app.post('/create-payment', async(req, res)=> {
     res.status(400).json(e.message);
    }
 })
-
-
 
 server.listen(PORT, ()=>{
   console.log('listening to', PORT)
